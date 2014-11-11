@@ -5,6 +5,7 @@ module Dradis::Plugins::Mediawiki
 
     include ::Dradis::Plugins::Base
     provides :import
+    description 'Import entries from an external MediaWiki'
   end
 
 end
