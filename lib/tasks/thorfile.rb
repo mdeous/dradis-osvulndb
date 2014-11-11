@@ -1,37 +1,39 @@
-class DradisTasks < Thor
-  class Import < Thor
-    class Wiki < Thor
-      namespace "dradis:import:wiki"
+module Dradis
+  module Plugins
+    module Mediawiki
 
-      desc "search14 QUERY", "perform a general search against a remote MediaWiki v1.14"
-      def search14(query)
-        require 'config/environment'
+      class Thor < Thor
+        namespace "dradis:plugins:wiki"
 
-        results = WikiImport::Filters::FullTextSearch14.run(:query => query)
+        desc "search14 QUERY", "perform a general search against a remote MediaWiki v1.14"
+        def search14(query)
+          require 'config/environment'
 
-        puts "Wiki Search\n==========="
-        puts "#{results.size} results"
+          results = WikiImport::Filters::FullTextSearch14.run(:query => query)
 
-        results.each do |record|
-          puts "#{record[:title]}\n\t#{record[:description]}"
+          puts "Wiki Search\n==========="
+          puts "#{results.size} results"
+
+          results.each do |record|
+            puts "#{record[:title]}\n\t#{record[:description]}"
+          end
         end
-      end
 
-      desc "search15 QUERY", "perform a general search against a remote MediaWiki v1.15"
-      def search15(query)
-        require 'config/environment'
+        desc "search15 QUERY", "perform a general search against a remote MediaWiki v1.15"
+        def search15(query)
+          require 'config/environment'
 
-        results = WikiImport::Filters::FullTextSearch15.run(:query => query)
+          results = WikiImport::Filters::FullTextSearch15.run(:query => query)
 
-        puts "Wiki Search\n==========="
-        puts "#{results.size} results"
+          puts "Wiki Search\n==========="
+          puts "#{results.size} results"
 
-        results.each do |record|
-          puts "#{record[:title]}\n\t#{record[:description]}"
+          results.each do |record|
+            puts "#{record[:title]}\n\t#{record[:description]}"
+          end
         end
-      end
       
+      end
     end
   end
 end
-
