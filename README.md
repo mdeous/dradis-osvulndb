@@ -1,6 +1,6 @@
 # MediaWiki plugin for Dradis
 
-[![Build Status](https://secure.travis-ci.org/dradis/dradis-mediawiki.png?branch=master)](http://travis-ci.org/dradis/dradis-mediawiki)
+[![Build Status](https://secure.travis-ci.org/dradis/dradis-mediawiki.png?branch=master)](http://travis-ci.org/dradis/dradis-mediawiki) [![Code Climate](https://codeclimate.com/github/dradis/dradis-mediawiki.png)](https://codeclimate.com/github/dradis/dradis-mediawiki.png)
 
 
 A simple wrapper around the MediaWiki API to connect it to the Dradis Framework.
