@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'http://dradisframework.org'
 
   spec.files       = `git ls-files`.split($\)
-  spec.executables = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  spec.test_files  = s.files.grep(%r{^(test|spec|features)/})
+  spec.executables = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.test_files  = spec.files.grep(%r{^(test|spec|features)/})
 
   # By not including Rails as a dependency, we can use the gem with different
   # versions of Rails (a sure recipe for disaster, I'm sure), which is needed
