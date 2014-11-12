@@ -1,4 +1,4 @@
-# MediaWiki plugin for Dradis
+# MediaWiki add-on for Dradis
 
 [![Build Status](https://secure.travis-ci.org/dradis/dradis-mediawiki.png?branch=master)](http://travis-ci.org/dradis/dradis-mediawiki) [![Code Climate](https://codeclimate.com/github/dradis/dradis-mediawiki.png)](https://codeclimate.com/github/dradis/dradis-mediawiki.png)
 
@@ -7,9 +7,9 @@ A simple wrapper around the MediaWiki API to connect it to the Dradis Framework.
 
 The idea is to be able to use a MediaWiki as a library of re-usable report entries for your projects.
 
-The plugin performs a text search against the WikiMedia API. See http://www.mediawiki.org/wiki/API for further reference.
+The add-on performs a text search against the WikiMedia API. See http://www.mediawiki.org/wiki/API for further reference.
 
-The plugin requires Dradis 3.0 or higher.
+The add-on requires Dradis 3.0 or higher.
 
 
 ## More information
