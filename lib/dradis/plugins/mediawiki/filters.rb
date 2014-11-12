@@ -3,13 +3,9 @@ module Dradis::Plugins::Mediawiki::Filters
     def query(params={})
       results = []
 
-      # host = Configuration.host
-      # port = Configuration.port
-      # path = Configuration.path
-
-      host = 'wiki.musicbrainz.org'
-      port = 80
-      path = '/api.php'
+      host = Dradis::Plugins::Mediawiki::Engine.settings.host
+      port = Dradis::Plugins::Mediawiki::Engine.settings.port
+      path = Dradis::Plugins::Mediawiki::Engine.settings.path
 
       begin
         # Parameters required by MediaWiki API
@@ -54,8 +50,7 @@ module Dradis::Plugins::Mediawiki::Filters
     # WikiMedia has its own formatting, and there are some tweaks we need to do
     # to addapt it to standard dradis convention.
     def fields_from_wikitext(wikitext)
-      # fields = Configuration.fields
-      fields = 'Title,Impact,Probability,Description,Recommendation'
+      fields = Dradis::Plugins::Mediawiki::Engine::settings.fields
 
       dradis_fields = wikitext
       fields = fields.split(',')
