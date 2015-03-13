@@ -8,10 +8,10 @@ module Dradis::Plugins::Mediawiki
     description 'Import entries from an external MediaWiki'
 
     addon_settings :wikiimport do
-      settings.host      = 'localhost'
-      settings.port      = 80
-      settings.path      = 'mediawiki/api.php'
-      settings.fields    = 'Title,Impact,Probability,Description,Recommendation'
+      settings.default_host      = 'localhost'
+      settings.default_port      = 80
+      settings.default_path      = 'mediawiki/api.php'
+      settings.default_fields    = 'Title,Impact,Probability,Description,Recommendation'
     end
   end
 
