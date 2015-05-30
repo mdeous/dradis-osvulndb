@@ -7,9 +7,6 @@ require 'rspec/rails'
 # require 'support/fixture_loader'
 
 RSpec.configure do |config|
-  config.color_enabled = true
-  # Use the specified formatter
-  config.formatter = :documentation
 
   # uncomment to use :focus => true to run a single Spec
   # config.filter_run :focus => true
