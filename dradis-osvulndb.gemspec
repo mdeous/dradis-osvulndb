@@ -1,23 +1,23 @@
 $:.push File.expand_path('../lib', __FILE__)
-require 'dradis/plugins/mediawiki/version'
-version = Dradis::Plugins::Mediawiki::VERSION::STRING
+require 'dradis/plugins/osvulndb/version'
+version = Dradis::Plugins::Osvulndb::VERSION::STRING
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY
-  spec.name        = 'dradis-mediawiki'
+  spec.name        = 'dradis-osvulndb'
   spec.version     = version
-  spec.summary     = 'MediaWiki add-on for the Dradis Framework.'
-  spec.description = 'Use a MediaWiki instance as source of re-usable issue entries for Dradis Framework.'
+  spec.summary     = 'VulnDB add-on for the Dradis Framework.'
+  spec.description = 'Use a VulnDB repository as source of re-usable issue entries for Dradis Framework.'
 
   spec.license     = 'GPL-2'
 
-  spec.authors     = ['Daniel Martin']
-  spec.email       = ['etd@nomejortu.com']
-  spec.homepage    = 'http://dradisframework.org'
+  spec.authors     = ['Mathieu Deous']
+  spec.email       = ['mat.deous@gmail.com']
+  spec.homepage    = 'https://github.com/mattoufoutu/dradis-osvulndb'
 
   spec.files       = `git ls-files`.split($\)
-  spec.executables = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.executables = spec.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   spec.test_files  = spec.files.grep(%r{^(test|spec|features)/})
 
   # By not including Rails as a dependency, we can use the gem with different

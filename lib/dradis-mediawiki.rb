@@ -1,1 +1,0 @@
-require 'dradis/plugins/mediawiki'
