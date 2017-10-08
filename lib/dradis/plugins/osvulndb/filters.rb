@@ -75,7 +75,7 @@ module Dradis::Plugins::Osvulndb::Filters
         dradis_fields += "#[Tags]#\n#{data['tags'].join(',')}\n\n"
       end
 
-      dradis_fields
+      dradis_fields.gsub('`', '@')
     end
   end
 end
