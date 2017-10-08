@@ -11,7 +11,8 @@ class OsvulndbTasks < Thor
     puts "#{results.size} results\n\n"
 
     results.each do |record|
-      puts "#{record.description}\n"
+      puts "#{record.description}"
+      puts "=============\n\n"
     end
   end
 end
