@@ -1,18 +1,21 @@
 module Dradis::Plugins::Osvulndb::Filters
   class Search < Dradis::Plugins::Import::Filters::Base
     def query(params = {})
-      q = /#{params[:query]}/i
+      q = params[:query].downcase
       results = []
 
       db_path = Dradis::Plugins::Osvulndb::Engine.settings.db_path
       Dir.glob("#{db_path}/*.json").each do |db_file|
         data = JSON.parse(File.read(db_file))
+        title = data['title']
         desc = data['description'].join(' ')
 
-        has_tag = !data['tags'].nil? and data['tags'].include?(params[:query].downcase)
-        if data['title'].match(q) or desc.match(q) or has_tag
+        title_match = title.downcase.include?(q)
+        desc_match = desc.downcase.include?(q)
+        tags_match = data['tags'].nil? ? false : data['tags'].include?(q)
+        if title_match or desc_match or tags_match
           results << Dradis::Plugins::Import::Result.new(
-            title: data['title'],
+            title: title,
             description: fields_from_json(data)
           )
         end
