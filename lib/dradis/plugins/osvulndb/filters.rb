@@ -34,9 +34,9 @@ module Dradis::Plugins::Osvulndb::Filters
       dradis_fields += "#[Remediation Effort]#\n#{data['fix']['effort']}\n\n"
       
       if data['fix']['guidance'].kind_of?(Array)
-        dradis_fields += "#[Remediation Guidance]#\n#{data['fix']['guidance'].join(' ')}\n\n"
+        dradis_fields += "#[Fix]#\n#{data['fix']['guidance'].join(' ')}\n\n"
       else
-        dradis_fields += "#[Remediation Guidance]#\n#{data['fix']['guidance']}\n\n"
+        dradis_fields += "#[Fix]#\n#{data['fix']['guidance']}\n\n"
       end
 
       unless data['wasc'].nil?
