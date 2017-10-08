@@ -1,6 +1,6 @@
 # VulnDB add-on for Dradis
 
-A simple plugin to import issues from a [VulnDB](https://github.com/vulndb/data) in the Dradis Framework.
+A simple plugin to import issues from a [VulnDB](https://github.com/vulndb/data) repository in the Dradis Framework.
 
 The idea is to be able to use a VulnDB repository as a library of re-usable report entries for your projects.
 
