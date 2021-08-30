@@ -59,8 +59,10 @@ module Dradis::Plugins::Osvulndb::Filters
 
       unless vulndata['owasp_top_10'].nil?
         owasp = "#[OWASP]#\n"
-        vulndata['owasp_top_10'].each do |owasp_id|
-          owasp += "* #{owasp_id}\n"
+        vulndata['owasp_top_10'].each do |owasp_year, owasp_ids|
+          owasp_ids.each do |owasp_id|
+            owasp += "* Top 10 #{owasp_year}: A#{owasp_id}\n"
+          end
         end
         dradis_fields += "#{owasp}\n"
       end
